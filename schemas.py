@@ -10,7 +10,7 @@ class FilmResponse(FilmCreate):
     average_score: Optional[float] = None
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 class RatingCreate(BaseModel):
     film_id: int = Field(..., gt=0)
@@ -20,7 +20,7 @@ class RatingResponse(RatingCreate):
     id: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 class FilmAverageResponse(BaseModel):
     film_id: int
